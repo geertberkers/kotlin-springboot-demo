@@ -7,6 +7,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.4"
 	kotlin("jvm") version "1.9.22"
 	kotlin("plugin.spring") version "1.9.22"
+	kotlin("kapt") version "1.8.0"
 }
 
 
@@ -28,6 +29,9 @@ repositories {
 }
 
 dependencies {
+
+//	kapt("org.springframework.boot:spring-boot-configuration-processor")
+
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-mustache")
 	implementation("org.springframework.boot:spring-boot-starter-web")
