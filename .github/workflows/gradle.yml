@@ -47,6 +47,14 @@ jobs:
     - name: Build with Gradle 8.9
       run: gradle build
 
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: gberkers/kotlin-springboot-demo
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
   dependency-submission:
 
     runs-on: ubuntu-latest
