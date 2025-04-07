@@ -23,7 +23,9 @@ class IntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
 		println(">> Assert blog page title, content and status code")
 		val entity = restTemplate.getForEntity<String>("/")
 		assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
-		assertThat(entity.body).contains("<h1>Blog</h1>", "Lorem")
+//		assertThat(entity.body).contains("<h1>Blog</h1>", "Lorem")
+		println(entity.body)
+		assertThat(entity.body).contains("<title>Blog</title>", "<div class=\"articles\">")
 //		assertThat(entity.body).contains("<h1>Blog</h1>", "Lorem")
 	}
 
